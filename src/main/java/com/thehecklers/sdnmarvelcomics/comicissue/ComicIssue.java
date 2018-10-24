@@ -48,14 +48,4 @@ public class ComicIssue {
 
     @Relationship(type = "MADE_OF")
     public List<Story> stories = new ArrayList<>();
-
-    public List<Character> getCharacters() { return characters; }
-
-    public List<Creator> getCreators() { return creators; }
-
-    public List<Event> getEvents() { return events; }
-
-    public List<Series> getSeries() { return series; }
-
-    public List<Story> getStories() { return stories; }
 }
