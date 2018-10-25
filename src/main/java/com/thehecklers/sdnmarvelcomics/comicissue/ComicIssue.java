@@ -17,13 +17,13 @@ import org.neo4j.ogm.annotation.Relationship;
 import java.util.ArrayList;
 import java.util.List;
 
-
 @Data
 @NoArgsConstructor
 @RequiredArgsConstructor
 @NodeEntity
 public class ComicIssue {
-    @Id @GeneratedValue
+    @Id
+    @GeneratedValue
     private Long neoId;
     @NonNull
     private Long id;

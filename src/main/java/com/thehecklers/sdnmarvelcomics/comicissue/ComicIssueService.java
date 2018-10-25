@@ -5,18 +5,18 @@ import com.thehecklers.sdnmarvelcomics.creator.Creator;
 import com.thehecklers.sdnmarvelcomics.event.Event;
 import com.thehecklers.sdnmarvelcomics.series.Series;
 import com.thehecklers.sdnmarvelcomics.story.Story;
+import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.*;
 
+@AllArgsConstructor
 @Service
 public class ComicIssueService {
     private final ComicIssueRepo issueRepo;
 
-    public ComicIssueService(ComicIssueRepo issueRepo) { this.issueRepo = issueRepo; }
-
-    private Map<String, Object> toD3Format(Collection<ComicIssue> issues) {
+    private Map<String, Object> toD3Format(Iterable<ComicIssue> issues) {
         List<Map<String, Object>> nodes = new ArrayList<>();
         List<Map<String, Object>> rels = new ArrayList<>();
         int i = 0;
@@ -97,5 +97,5 @@ public class ComicIssueService {
     public Iterable<ComicIssue> findByNameLike(String name) { return issueRepo.findByNameLike(name); }
 
     @Transactional(readOnly = true)
-    public Map<String, Object> graph(int limit) { return toD3Format(issueRepo.graph(limit)); }
+    public Map<String, Object> graph(Integer limit) { return toD3Format(issueRepo.graph(limit)); }
 }

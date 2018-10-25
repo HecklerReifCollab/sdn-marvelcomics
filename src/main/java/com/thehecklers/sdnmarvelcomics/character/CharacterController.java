@@ -12,5 +12,5 @@ public class CharacterController {
     public CharacterController(CharacterRepo repo) { this.repo = repo; }
 
     @GetMapping
-    public Iterable<Character> getAllCharacter() { return repo.findAll(); }
+    public Iterable<Character> getAllCharacters() { return repo.findAll(); }
 }
