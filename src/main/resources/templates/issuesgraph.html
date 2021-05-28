@@ -179,7 +179,7 @@
 
         function search() {
             var query = $("#search").find("input[name=search]").val();
-            $.get("/comicissues/findbynamelike?name=*" + encodeURIComponent(query) + "*",
+            $.get("/comicissues/findbynamelike?name=" + encodeURIComponent(query) ,
                 function (data) {
                     var t = $("table#results tbody").empty();
                     if (!data) return;
