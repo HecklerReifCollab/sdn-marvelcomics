@@ -44,25 +44,25 @@ WITH c, comic, result
 MERGE (comic)-[r:INCLUDES]->(c)
 WITH c, comic, result WHERE result.series IS NOT NULL
 UNWIND result.series as comicSeries
-MERGE (series:Series {id: toInt(split(comicSeries.resourceURI,"/")[-1])})
+MERGE (series:Series {id: toInteger(split(comicSeries.resourceURI,"/")[-1])})
   ON CREATE SET series.name = comicSeries.name, series.resourceURI = comicSeries.resourceURI
 WITH c, comic, series, result
 MERGE (comic)-[r2:BELONGS_TO]->(series)
 WITH c, comic, result, result.creators.items as items WHERE items IS NOT NULL
 UNWIND items as item
-MERGE (creator:Creator {id: toInt(split(item.resourceURI,"/")[-1])})
+MERGE (creator:Creator {id: toInteger(split(item.resourceURI,"/")[-1])})
   ON CREATE SET creator.name = item.name, creator.resourceURI = item.resourceURI
 WITH c, comic, result, creator
 MERGE (comic)-[r3:CREATED_BY]->(creator)
 WITH c, comic, result, result.stories.items as items WHERE items IS NOT NULL
 UNWIND items as item
-MERGE (story:Story {id: toInt(split(item.resourceURI,"/")[-1])})
+MERGE (story:Story {id: toInteger(split(item.resourceURI,"/")[-1])})
   ON CREATE SET story.name = item.name, story.resourceURI = item.resourceURI, story.type = item.type
 WITH c, comic, result, story
 MERGE (comic)-[r4:MADE_OF]->(story)
 WITH c, comic, result, result.events.items AS items WHERE items IS NOT NULL
 UNWIND items as item
-MERGE (event:Event {id: toInt(split(item.resourceURI,"/")[-1])})
+MERGE (event:Event {id: toInteger(split(item.resourceURI,"/")[-1])})
   ON CREATE SET event.name = item.name, event.resourceURI = item.resourceURI
 MERGE (comic)-[r5:PART_OF]->(event)',
 {batchSize: 20, iterateList:false, retries:2, params:{suffix:suffix}})
