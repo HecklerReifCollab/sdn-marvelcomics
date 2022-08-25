@@ -1,0 +1,24 @@
+= SDN Marvel Comics Project Overview
+
+This is the parent repository for the Spring Data Neo4j Marvel Comics application project. It provides links to all resources associated with the project.
+
+== Related repositories
+
+* https://github.com/JMHReif/graph-demo-datasets/tree/main/marvel-comics[Data: Import for Marvel Comic data into Neo4j^]
+
+== Related Blog Posts
+
+* https://medium.com/neo4j/create-a-data-marvel-develop-a-full-stack-application-with-spring-and-neo4j-part-1-350f0f7e6609[Part 1: Marvel API and Data Model^]
+* https://medium.com/neo4j/create-a-data-marvel-develop-a-full-stack-application-with-spring-and-neo4j-part-2-12186b929cb2[Part 2: Data Import (Characters)^]
+* https://medium.com/neo4j/create-a-data-marvel-develop-a-full-stack-application-with-spring-and-neo4j-part-3-3ac3380e0edb[Part 3: Data Import (Entities and Relationships^]
+* https://medium.com/neo4j/create-a-data-marvel-part-4-how-to-design-the-application-874ba6ea08a5[Part 4: Application Design and Spring Data Neo4j^]
+* https://medium.com/neo4j/create-a-data-marvel-part-5-writing-the-domain-classes-27a39ab0666a[Part 5: Application (Characters)^]
+* https://medium.com/neo4j/create-a-data-marvel-part-6-developing-more-entities-be5aeab1817a[Part 6: Application (other entities)^]
+* https://medium.com/neo4j/create-a-data-marvel-part-7-connecting-the-graph-bc7ed9e2b843[Part 7: Application (relationships)^]
+* https://medium.com/neo4j/create-a-data-marvel-part-8-controlling-and-servicing-our-comic-endpoints-4dd08b81e0e[Part 8: REST endpoints and Visualization^]
+* https://medium.com/neo4j/create-a-data-marvel-part-9-building-the-webpage-for-comics-1ceb26f8a5be[Part 9: Building the Webpage UI^]
+* https://medium.com/neo4j/creating-a-data-marvel-part-10-lessons-and-resources-8ffb5bf0ad1[Part 10: Lessons and Resources^]
+
+== Related presentations
+
+* https://speakerdeck.com/jmhreif/getting-graphic-extract-maximum-value-from-the-top-to-the-bottom-of-the-stack[Getting Graphic: Extract Maximum Value from the Top to the Bottom of the Stack^]
